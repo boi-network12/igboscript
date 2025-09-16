@@ -105,7 +105,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 # 🔗 Njikọ (Links)
 
-- **GitHub Repository**: https://github.com/your-username/igboscript 
+- **GitHub Repository**: [git hub repo ](https://github.com/boi-network12/igboscript.git)
 - **Issue Tracker**: Please report bugs and suggest features here.
 
 **Kee koodu n'asụsụ ala gị! | Code in your native language!**
