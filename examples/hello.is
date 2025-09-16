@@ -1,0 +1,7 @@
+pụta("Ndeewo Ụwa!");
+
+mgbe (true) {
+  pụta("Ọrụ gara nke ọma");
+} ọzọ {
+  pụta("Ihe adaala");
+}
