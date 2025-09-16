@@ -1,0 +1,4 @@
+ọrụ sayHello(aha) {
+  pụta("Hello, " + aha);
+}
+sayHello("world");

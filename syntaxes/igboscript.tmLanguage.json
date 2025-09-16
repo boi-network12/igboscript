@@ -1,0 +1,40 @@
+{
+    "scopeName": "source.igboscript",
+    "fileTypes": [
+        "is"
+    ],
+    "patterns": [
+        {
+            "match": "\\b(pụta|ka|oBuru|maOBuru|oBughi|maka|mgbe|ọrụ|laghachi|nke|nye|dịka|nkwụsị|gaa|nwapụta|nwetakwa|site|na|ajụjụ|mechie|nhapụta|ntinye|mmepụta|dee|gụọ|ịkpuchi|ịkpuba)\\b",
+            "name": "keyword.control.igboscript"
+        },
+        {
+            "match": "\\b[0-9]+(\\.[0-9]+)?\\b",
+            "name": "constant.numeric.igboscript"
+        },
+        {
+            "match": "\"([^\"\\\\]*(?:\\\\.[^\"\\\\]*)*)\"",
+            "name": "string.quoted.double.igboscript"
+        },
+        {
+            "match": "\\b(true|false)\\b",
+            "name": "constant.language.boolean.igboscript"
+        },
+        {
+            "match": "\\b(\\w+)\\s*\\(\\s*",
+            "name": "entity.name.function.igboscript"
+        },
+        {
+            "match": "[+\\-*/=><!&|]+",
+            "name": "keyword.operator.igboscript"
+        },
+        {
+            "match": "//.*$",
+            "name": "comment.line.double-slash.igboscript"
+        },
+        {
+            "match": "\\b(\\w+)\\b",
+            "name": "variable.other.igboscript"
+        }
+    ]
+}

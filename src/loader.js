@@ -1,9 +1,15 @@
 const fs = require("fs");
 const { translate } = require("./parser");
+const chalk = require("chalk");
 
-// Add support for `.is` files in Node.js
 require.extensions[".is"] = function (module, filename) {
-  const content = fs.readFileSync(filename, "utf8");
-  const jsCode = translate(content);
-  return module._compile(jsCode, filename);
+  try {
+    const content = fs.readFileSync(filename, "utf8");
+    const jsCode = translate(content);
+    console.log(chalk.cyan(`Loading Igboscript file: ${filename}`));
+    return module._compile(jsCode, filename);
+  } catch (error) {
+    console.error(chalk.red(`Error loading ${filename}: ${error.message}`));
+    process.exit(1);
+  }
 };

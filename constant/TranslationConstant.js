@@ -1,0 +1,31 @@
+const translations = {
+  "pụta": "console.log",
+  "ka": "let",
+  "oBuru": "if",
+  "maOBuru": "else if",
+  "oBughi": "else",
+  "maka": "for",
+  "mgbe": "while",
+  "ọrụ": "function",
+  "laghachi": "return",
+  "nke": "const",
+  "nye": "let",
+  "dịka": "switch",
+  "nkwụsị": "break",
+  "gaa": "continue",
+  "nwapụta": "export",
+  "nwetakwa": "import",
+  "site": "as",
+  "na": "from",
+  "ajụjụ": "question",
+  "mechie": "close",
+  "nhapụta": "createInterface",
+  "ntinye": "input",
+  "mmepụta": "output",
+  "dee": "writeFileSync",
+  "gụọ": "readFileSync",
+  "ịkpuchi": "JSON.stringify",
+  "ịkpuba": "JSON.parse"
+};
+
+module.exports = { translations };
