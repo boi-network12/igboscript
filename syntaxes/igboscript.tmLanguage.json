@@ -1,11 +1,12 @@
 {
     "scopeName": "source.igboscript",
     "fileTypes": [
-        "is"
+        "is",
+        "js"
     ],
     "patterns": [
         {
-            "match": "\\b(pụta|ka|oBuru|maOBuru|oBughi|maka|mgbe|ọrụ|laghachi|nke|nye|dịka|nkwụsị|gaa|nwapụta|nwetakwa|site|na|ajụjụ|mechie|nhapụta|ntinye|mmepụta|dee|gụọ|ịkpuchi|ịkpuba)\\b",
+            "match": "\\b(pụta|ka|oBuru|maOBuru|oBughi|maka|mgbe|ọrụ|laghachi|nke|nye|dịka|nkwụsị|gaa|nwapụta|nwetakwa|site|na|ajụjụ|mechie|nhapụta|ntinye|mmepụta|dee|gụọ|ịkpuchi|ịkpuba|nweta|ziga|ṅaa|ozi|json|nwere|hapụ|nwapụ|jide|tufuo|ọhụrụ|nkea|dị|ụdị|ọ bụghị|ma|maọbụ|nọrọ|nkwado|kwe|ịṅa|nkeji|ndabara|klas|welite|nlele|naEzi|naỤgha|efu|anọghị|ụlọ|hazi|tinye|wepụ|nyefee|tinyeN'ihu|haziUdi|nyo|belata|chọọ|haziNdepụta|kewapụ|kewaa|ncha|kewapụta|chọta|ịkọ|nchọta|gbanwee|gbanweeElu|ịkpa|ịkpaUru|ịkpaNtinye|hazie|kọọ|ịgụ|elu|ọṅụ|nọmba|nọmbaN'ọnụ|bido|kwụsị|bidoOge|kwụsịOge|nyeaka|modul|ngwa|ọdụ|ụzọ|sistemụ|ụlọọrụ|ụlọọrụS|nzipụta|arịrịọ|jiSteeti|jiMmetụta|jiNcheta|jiNlere|jiNgbanwe|jiỌnọdụ|komponenti|iberibe|steeti|mmetụta|ncheta|nlere|ọnọdụ|na-agba|tagi|tagiMechie|mechieOnwe|okwu|ụdịMmetụta|ụdịNjikwa|peeji|ụzọAPI|nwetakwaData|nwetakwaStaticData|nwetakwaStaticỤzọ|nkeNjem|njem|njikọ|ngwaExpress|jiNgwa|njikwa|ụzọGet|ụzọPost|ụzọPut|ụzọDelete|nzipụtaJSON|nzipụtaStatus|nzipụtaHeader|arịrịọQuery|arịrịọBody|arịrịọParams|nwapụtaNke|nwapụtaNwere|nwetakwaNke|nkePromise|kwePromise|jụPromise|nkeMap|nkeSet|nkeWeakMap|nkeWeakSet|nkeArrayBuffer|nkeDataView)\\b",
             "name": "keyword.control.igboscript"
         },
         {
@@ -17,7 +18,11 @@
             "name": "string.quoted.double.igboscript"
         },
         {
-            "match": "\\b(true|false)\\b",
+            "match": "`([^`\\\\]*(?:\\\\.[^`\\\\]*)*)`",
+            "name": "string.quoted.template.igboscript"
+        },
+        {
+            "match": "\\b(naEzi|naỤgha)\\b",
             "name": "constant.language.boolean.igboscript"
         },
         {
@@ -35,6 +40,10 @@
         {
             "match": "\\b(\\w+)\\b",
             "name": "variable.other.igboscript"
+        },
+        {
+            "match": "<[^>]+>",
+            "name": "meta.tag.igboscript"
         }
     ]
 }

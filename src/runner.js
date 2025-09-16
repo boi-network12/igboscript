@@ -5,7 +5,7 @@ const chalk = require("chalk");
 const acorn = require("acorn");
 const { execSync } = require("child_process");
 
-function runFile(filePath) {
+function runFile(filePath, options = { debug: false }) {
   try {
     const ext = path.extname(filePath);
     if (ext !== ".is") {
@@ -15,25 +15,36 @@ function runFile(filePath) {
 
     const content = fs.readFileSync(filePath, "utf8");
     const jsCode = translate(content);
-    console.log(chalk.green("Running Igboscript..."));
+    
+    if (options.debug) {
+      console.log(chalk.blue("Translated JavaScript code:\n"), jsCode);
+    }
 
     // Validate syntax
     try {
-      acorn.parse(jsCode, { ecmaVersion: "latest", sourceType: "script" });
+      acorn.parse(jsCode, { ecmaVersion: "latest", sourceType: "module" });
     } catch (syntaxError) {
       console.error(chalk.red(`Syntax Error in generated code: ${syntaxError.message}`));
       process.exit(1);
     }
 
     // Save translated code to a temporary .js file
-    const tempFilePath = path.join(path.dirname(filePath), "temp.js");
+    const tempFilePath = path.join(path.dirname(filePath), `temp-${Date.now()}.js`);
     fs.writeFileSync(tempFilePath, jsCode);
 
-    // Execute the .js file with Node.js
+    // Execute based on context
     try {
-      execSync(`node ${tempFilePath}`, { stdio: "inherit" });
+      if (filePath.includes("pages") || filePath.includes("api")) {
+        // Next.js context: Simulate module export
+        console.log(chalk.green("Running Igboscript in Next.js context..."));
+        execSync(`node -e "require('${tempFilePath}')"`, { stdio: "inherit" });
+      } else {
+        // Express or standalone context
+        console.log(chalk.green("Running Igboscript..."));
+        execSync(`node ${tempFilePath}`, { stdio: "inherit" });
+      }
     } finally {
-      // Clean up the temporary file
+      // Clean up
       if (fs.existsSync(tempFilePath)) {
         fs.unlinkSync(tempFilePath);
       }

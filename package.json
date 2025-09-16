@@ -1,6 +1,6 @@
 {
   "name": "igboscript",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "displayName": "Igboscript Language Support",
   "description": "A lightweight programming language for writing JavaScript in Igbo",
   "publisher": "kamdi",
@@ -13,7 +13,10 @@
   "main": "index.js",
   "icon": "icon.png",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node bin/igboscript.js dev",
+    "build": "next build",
+    "start": "next start",
+    "igboscript": "node bin/igboscript.js"
   },
   "bin": {
     "igboscript": "bin/igboscript.js"
@@ -35,6 +38,7 @@
     "dotenv": "^17.2.2",
     "fa": "^1.0.1",
     "fs": "^0.0.1-security",
+    "glob": "^11.0.3",
     "open": "^10.2.0",
     "path": "^0.12.7",
     "readline": "^1.3.0"
@@ -48,7 +52,8 @@
           "igboscript"
         ],
         "extensions": [
-          ".is"
+          ".is",
+          ".js"
         ],
         "configuration": "./language-configuration.json"
       }

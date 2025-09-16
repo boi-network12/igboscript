@@ -1,4 +1,9 @@
-ọrụ sayHello(aha) {
-  pụta("Hello, " + aha);
+nke x = 42;
+pụta("Ndewo, ụwa!");
+oBuru (x > 40) {
+  pụta("X karịrị 40");
+} maOBuru (x == 40) {
+  pụta("X bụ 40");
+} oBughi {
+  pụta("X pere mpe");
 }
-sayHello("world");
