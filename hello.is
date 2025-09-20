@@ -1,9 +1,46 @@
-nke x = 42;
-pụta("Ndewo, ụwa!");
-oBuru (x > 40) {
-  pụta("X karịrị 40");
-} maOBuru (x == 40) {
-  pụta("X bụ 40");
-} oBughi {
-  pụta("X pere mpe");
-}
+// api/user.js
+nwetakwa ngwaExpress na "express";
+
+nke ngwa = ngwaExpress();
+
+ngwa.jiNgwa((arịrịọ, nzipụta) => {
+    nzipụtaStatus(200);
+    nzipụtaJSON({ ozi: "Ndeewo site Igbo API!" });
+});
+
+// GET /users
+ngwa.ụzọGet('/users', (arịrịọ, nzipụta) => {
+    nke users = [
+        { id: 1, aha: "Chioma Okeke", obodo: "Enugu" },
+        { id: 2, aha: "Chukwuemeka Nwosu", obodo: "Onitsha" },
+        { id: 3, aha: "Adaora Eze", obodo: "Awka" }
+    ];
+    nzipụtaJSON({ 
+        ok: "Ezinaụlọ", 
+        ndi: users 
+    });
+});
+
+// POST /users
+ngwa.ụzọPost('/users', (arịrịọ, nzipụta) => {
+    nke newUser = arịrịọBody;
+    pụta("Onye ọhụrụ: ", newUser);
+    
+    nke users = [
+        { id: 1, aha: "Chioma Okeke" },
+        { id: 2, aha: "Chukwuemeka Nwosu" }
+    ];
+    
+    users.tinye({ 
+        id: users.length + 1, 
+        ...newUser 
+    });
+    
+    nzipụtaStatus(201).nzipụtaJSON({ 
+        ok: "Onye ọhụrụ ekelelịrị", 
+        onye: newUser 
+    });
+});
+
+// Export the app
+nwapụtaNke(ngwa);

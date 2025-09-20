@@ -1,6 +1,6 @@
 {
   "name": "igboscript",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "displayName": "Igboscript Language Support",
   "description": "A lightweight programming language for writing JavaScript in Igbo",
   "publisher": "kamdi",
@@ -36,6 +36,7 @@
     "child_process": "^1.0.2",
     "chokidar": "^4.0.3",
     "dotenv": "^17.2.2",
+    "express": "^5.1.0",
     "fa": "^1.0.1",
     "fs": "^0.0.1-security",
     "glob": "^11.0.3",
@@ -49,11 +50,10 @@
         "id": "igboscript",
         "aliases": [
           "Igboscript",
-          "igboscript"
+          "Igbo JS"
         ],
         "extensions": [
-          ".is",
-          ".js"
+          ".is"
         ],
         "configuration": "./language-configuration.json"
       }
@@ -61,8 +61,11 @@
     "grammars": [
       {
         "language": "igboscript",
-        "scopeName": "source.igboscript",
-        "path": "./syntaxes/igboscript.tmLanguage.json"
+        "scopeName": "source.js",
+        "path": "./syntaxes/igboscript.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.js": "javascript"
+        }
       }
     ]
   }
