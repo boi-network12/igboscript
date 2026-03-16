@@ -13,8 +13,6 @@
 
 
 
-# Igboscript 🇳🇬
-
 > **Ime koodu n'asụsụ Igbo \| Code in the Igbo Language**
 
 Igboscript is a lightweight programming language that allows developers
