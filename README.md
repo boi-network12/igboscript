@@ -1,3 +1,18 @@
+<p align="center">
+  <h1 align="center">Igboscript 🇳🇬</h1>
+  <p align="center">
+    Write JavaScript using the Igbo Language
+  </p>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/npm/v/igboscript" />
+  <img src="https://img.shields.io/npm/dw/igboscript" />
+  <img src="https://img.shields.io/github/license/boi-network12/igboscript" />
+</p>
+
+
+
 # Igboscript 🇳🇬
 
 > **Ime koodu n'asụsụ Igbo \| Code in the Igbo Language**
